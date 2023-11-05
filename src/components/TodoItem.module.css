@@ -1,0 +1,71 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4.5rem;
+  background: var(--gray-500);
+  margin: 0.8rem auto;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+
+  transition: all 300ms ease-in-out;
+}
+
+.todoItem:hover {
+  background: var(--gray-400);
+}
+
+.todoItem:has(.checkBoxTodo:checked) {
+  filter: brightness(80%);
+}
+
+.checkBoxTodo {
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 2px solid var(--blue);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.checkBoxTodo:checked {
+  background: var(--purple);
+  border-color: transparent;
+}
+
+.checkBoxTodo:checked::before {
+  content: "";
+  position: absolute;
+  margin-left: 0.438rem;
+  margin-top: 0.219rem;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.todoItem svg {
+  transition: color 300ms ease-in-out;
+}
+
+.todoItem svg:hover {
+  color: var(--danger);
+}
+
+.checkBoxTodo:checked + .contentTodo {
+  color: var(--gray-300);
+  font-family: Inter;
+  font-size: var(--text-sm);
+  font-style: normal;
+  font-weight: 400;
+  line-height: var(--line-height);
+  text-decoration: line-through;
+}
