@@ -3,10 +3,11 @@
   flex: 1;
   justify-content: center;
   gap: 0.5rem;
+  margin-top: -3.7rem;
 }
 
 .todoForm input,
-button {
+.todoForm button {
   height: 54px;
   border-radius: var(--border-radius);
 }
