@@ -14,7 +14,7 @@ export interface TodoType {
 }
 
 export function Todo() {
-  const [todos, setTodos] = useState(todoFake);
+  const [todos, setTodos] = useState<TodoType[]>(todoFake);
   const [contentNewTodo, setContentNewTodo] = useState("");
 
   function handleNewTodo(event: FormEvent) {
@@ -27,7 +27,7 @@ export function Todo() {
       completed: false,
     };
 
-    setTodos([...todos, newTodoItem]);
+    setTodos((state) => [...state, newTodoItem]);
     setContentNewTodo("");
   }
 
